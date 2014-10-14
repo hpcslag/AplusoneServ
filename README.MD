@@ -1,3 +1,12 @@
-Version01_Test Update to Github!
+Aplusone Server
+===================================
+Author: [MacTaylor][link] ,Date: 2014/10/14
+Language: Node.js
 
-Author: MacTaylor
+How To Use
+---------------
+##cd AplusoneServ-master
+##node app.js
+
+How to Set Up Configure.json
+---------------
