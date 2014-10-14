@@ -1,6 +1,6 @@
 Aplusone Server
 ===================================
-Author: [MacTaylor][link] ,Date: 2014/10/14
+Author: [MacTaylor](https://github.com/hpcslag "MacTaylor") ,Date: 2014/10/14
 Language: Node.js
 
 How To Use
