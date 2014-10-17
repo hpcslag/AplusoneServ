@@ -7,6 +7,7 @@ Language: Node.js
     git clone https://github.com/hpcslag/AplusoneServ.git
     cd AplusoneServ-master
     mkdir www
+    npm install
     node app.js
 
     ./www save assets or everything!
