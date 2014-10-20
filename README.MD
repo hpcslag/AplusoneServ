@@ -12,3 +12,13 @@ Language: Node.js
 
     ./www save assets or everything!
 ##How to Set Up Configure.json
+    {
+      "baseDir": "./www",
+      "dirindex":["index.html","default.html"],
+    
+      "host":{
+      	"ip":"127.0.0.1",
+      	"port":80
+      }
+    }
+    *setup your port,ip here!
