@@ -15,10 +15,11 @@ Language: Node.js
     {
       "baseDir": "./www",
       "dirindex":["index.html","default.html"],
-    
+
       "host":{
       	"ip":"127.0.0.1",
       	"port":80
-      }
+      },
+      "https":"disable", //if you want open https, please set options "enable"
     }
     *setup your port,ip here!
