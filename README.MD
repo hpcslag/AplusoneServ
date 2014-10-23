@@ -17,7 +17,7 @@ Language: Node.js
       "dirindex":["index.html","default.html"],
 
       "host":{
-      	"ip":"127.0.0.1",
+      	"ip":"localhost", //if you use localhost, 127.0.0.1 cannot use
       	"port":80
       },
       "https":"disable", //if you want open https, please set options "enable"

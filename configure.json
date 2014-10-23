@@ -3,7 +3,7 @@
   "dirindex":["index.html","default.html"],
 
   "host":{
-  	"ip":"127.0.0.1",
+  	"ip":"localhost",
   	"port":80
   },
   "https":"disable"

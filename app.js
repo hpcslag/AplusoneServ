@@ -22,14 +22,20 @@ fs.readFile('configure.json',function(err,data){
 				baseDir: path.join(__dirname,conf.baseDir),
 				dirindex: conf.dirindex
 			});
-			appone.host('localhost')
+			
+			appone.host(conf.host.ip)
 				.map('/',path.join(__dirname,'./www'))
 				.get('/hello',function(req,res,cb) {
 					cb(false,'/hello',{
 						type: 'text/html',
 						data: '<html><body>hello</body></html>'
 					});
-				});
+				}).get('/begin',function(req,res,cb) {
+					cb(false,'/hello',{
+						type: 'text/html',
+						data: '<html><body>hello</body></html>'
+					});
+			});
 		}
 
 		appone.listen(conf.host.port,conf.host.ip); //Setup Port, IP Address!
