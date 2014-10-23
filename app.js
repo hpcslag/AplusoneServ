@@ -3,6 +3,7 @@ var Servs = require('./lib/https'); //using https module
 var path = require('path');
 var fs = require('fs');
 var colors = require('colors');
+var router = require('./lib/router');
 
 
 fs.readFile('configure.json',function(err,data){
@@ -21,6 +22,14 @@ fs.readFile('configure.json',function(err,data){
 				baseDir: path.join(__dirname,conf.baseDir),
 				dirindex: conf.dirindex
 			});
+			appone.host('localhost')
+				.map('/',path.join(__dirname,'./www'))
+				.get('/hello',function(req,res,cb) {
+					cb(false,'/hello',{
+						type: 'text/html',
+						data: '<html><body>hello</body></html>'
+					});
+				});
 		}
 
 		appone.listen(conf.host.port,conf.host.ip); //Setup Port, IP Address!
@@ -40,11 +49,11 @@ fs.readFile('configure.json',function(err,data){
 		console.log("          █ ◥█▌█     ◥██████████".red);
 		console.log("          █  ◥▌████    ◥████████◣".red);
 		console.log("               ▇▇◣  ██   ◥███████".red);
-		console.log("               █  █ ██   ◢███████▌".red);
-		console.log("               ███◤ ██ ◢◤   ◥█████◣".red);
-		console.log("               █ ◥◣ ██◤       ◥████".red);
-		console.log("    GOD GOTO SLEEP     ,        ◥██".red);
-		console.log("      "+"GO DE YOUR BUG.".green+"             ◥ ".red);
+		console.log("               █  █ 	██   ◢███████▌".red);
+		console.log("               ███◤ 	██ ◢◤   ◥█████◣".red);
+		console.log("               █ ◥◣ 	██◤       ◥████".red);
+		console.log("    GOD GOTO SLEEP     ,        	 ◥██".red);
+		console.log("      "+"GO DE YOUR BUG.".green+"     ◥ ".red);
 	}
 });
  //Setup base Directory!
