@@ -6,5 +6,6 @@
   	"ip":"localhost",
   	"port":80
   },
-  "https":"disable"
+  "https":"disable",
+  "view":"/view"
 }

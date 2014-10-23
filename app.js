@@ -4,6 +4,7 @@ var path = require('path');
 var fs = require('fs');
 var colors = require('colors');
 var router = require('./lib/router');
+var views = require('./lib/ejsrender');
 
 
 fs.readFile('configure.json',function(err,data){
@@ -23,6 +24,8 @@ fs.readFile('configure.json',function(err,data){
 				dirindex: conf.dirindex
 			});
 			
+			var view = new views();
+
 			appone.host(conf.host.ip)
 				.map('/',path.join(__dirname,'./www'))
 				.get('/hello',function(req,res,cb) {
@@ -35,7 +38,16 @@ fs.readFile('configure.json',function(err,data){
 						type: 'text/html',
 						data: '<html><body>hello</body></html>'
 					});
-			});
+				}).get('/index',function(req,res,cb){/*here have a big bug*/
+					var data = view.render('index.ejs',{
+						name:"MacTaylor"
+					});
+					console.log(data);
+					cb(false,'/index',{
+						type:'text/html',
+						data: data
+					})
+				});
 		}
 
 		appone.listen(conf.host.port,conf.host.ip); //Setup Port, IP Address!
