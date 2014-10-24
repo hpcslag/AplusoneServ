@@ -5,6 +5,8 @@
   "dependencies": {
     "mime": "1.2.11",
     "colors": "1.0.3",
-    "ejs":"1.0.0"
+    "ejs":"1.0.0",
+    "cluster":"0.7.7",
+    "mongodb":"1.4.19"
   }
 }

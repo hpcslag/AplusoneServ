@@ -21,5 +21,9 @@ Language: Node.js
       	"port":80
       },
       "https":"disable", //if you want open https, please set options "enable"
+      "view": "/view" //setup view engine path
+      "cluster":1 //setup cluster length
     }
     *setup your port,ip here!
+##How to add route
+  open index file and coding after .map() using .get()
