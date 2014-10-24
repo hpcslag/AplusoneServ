@@ -25,8 +25,15 @@ fs.readFile('configure.json',function(err,data){
 			});
 			
 			var view = new views();
-
-			appone.host(conf.host.ip)
+			fs.readFile('./index.js',function(err,data){
+				if(err){
+					console.log('undefined index.js file, please create file!');
+					process.exit();
+				}else{
+					eval(data.toString()); //string to code, warning!
+				}
+			});
+			/*appone.host(conf.host.ip)
 				.map('/',path.join(__dirname,'./www'))
 				.get('/hello',function(req,res,cb) {
 					cb(false,'/hello',{
@@ -38,16 +45,16 @@ fs.readFile('configure.json',function(err,data){
 						type: 'text/html',
 						data: '<html><body>hello</body></html>'
 					});
-				}).get('/index',function(req,res,cb){/*here have a big bug*/
+				}).get('/index',function(req,res,cb){
 					var data = view.render('index.ejs',{
 						name:"MacTaylor"
+					},function(callback){
+						cb(false,'/index',{
+							type:'text/html',
+							data: callback
+						});
 					});
-					console.log(data);
-					cb(false,'/index',{
-						type:'text/html',
-						data: data
-					})
-				});
+				});*/
 		}
 
 		appone.listen(conf.host.port,conf.host.ip); //Setup Port, IP Address!
@@ -74,5 +81,3 @@ fs.readFile('configure.json',function(err,data){
 		console.log("      "+"GO DE YOUR BUG.".green+"     ◥ ".red);
 	}
 });
- //Setup base Directory!
- //Setup Your default index, like apache HTTPD.conf file!
