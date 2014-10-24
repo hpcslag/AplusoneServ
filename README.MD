@@ -6,7 +6,6 @@ Language: Node.js
 ##How To Use:
     git clone https://github.com/hpcslag/AplusoneServ.git
     cd AplusoneServ-master
-    mkdir www
     npm install
     node app.js
 
